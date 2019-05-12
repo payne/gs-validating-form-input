@@ -1,5 +1,9 @@
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 	<body>
-		Congratulations! You are old enough to sign up for this site.
+		Congratulations! 
+		
+	At	<span th:text="${personForm.age}"/> years old, 
+		
+		you are old enough to sign up for this site.
 	</body>
 </html>
