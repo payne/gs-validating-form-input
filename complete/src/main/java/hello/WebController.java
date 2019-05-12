@@ -3,11 +3,10 @@ package hello;
 import javax.validation.Valid;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Controller
@@ -23,7 +22,6 @@ public class WebController implements WebMvcConfigurer {
 		if (bindingResult.hasErrors()) {
 			return "form";
 		}
-		model.addAttribute("personForm", personForm);
 		return "results";
 	}
 }
