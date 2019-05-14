@@ -4,6 +4,8 @@ import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+//import javax.validation.constraints.Long;
 
 public class PersonForm {
 
@@ -19,13 +21,35 @@ public class PersonForm {
     @Min(2)
     private Integer yearsExperience;
 
+    // @NotNull would not prevent successful submission when leaving email blank
+    @NotEmpty
     @Email(message = "Email should be valid")
     private String email;
+
+    @NotEmpty
+    @Min(-9223372036854775808)
+    @Max(9223372036854775807)
+    // This does nto work.  Min and Max are Integers, these are too large.
+    private Long exampleLong;
     // source: https://www.baeldung.com/javax-validation
 
     // add street address and email, years of experience, and a long
     // add more data labels & fields
     // append these to the text file
+
+    /*
+    open it
+    output to it (write data to the file)
+    close it
+
+    writer the class printWriter is a favorite
+    reader the class lineNumberReader is a favorite
+
+    create hello.txt
+    write "Hello World" to the file
+    close the file
+
+    */
 
     /*
     1) Please fork this repo:
@@ -69,6 +93,14 @@ public class PersonForm {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public Long getLong() {
+        return this.exampleLong;
+    }
+
+    public void setLong(Long exampleLong) {
+        return this.exampleLong;
     }
 
     public String toString() {

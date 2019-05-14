@@ -30,6 +30,14 @@
                     <td th:if="${#fields.hasErrors('email')}" th:errors="*{email}">email Error</td>
                 </tr>
                 <tr>
+                    <td>Sample Long:</td>
+                    <td><input type="text" th:field="*{exampleLong}" /></td>
+                    <td th:if="${#fields.hasErrors('exampleLong')}" th:errors="*{exampleLong}">Long Error</td>
+                </tr>
+
+
+                
+                <tr>
                     <td><button type="submit">Submit</button></td>
                 </tr>
             </table>
