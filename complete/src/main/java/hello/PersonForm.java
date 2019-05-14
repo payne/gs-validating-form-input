@@ -3,6 +3,7 @@ package hello;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import javax.validation.constraints.Email;
 
 public class PersonForm {
 
@@ -17,6 +18,10 @@ public class PersonForm {
     @NotNull
     @Min(2)
     private Integer yearsExperience;
+
+    @Email(message = "Email should be valid")
+    private String email;
+    // source: https://www.baeldung.com/javax-validation
 
     // add street address and email, years of experience, and a long
     // add more data labels & fields
@@ -56,6 +61,14 @@ public class PersonForm {
 
     public void setYearsExperience(Integer yearsExperience) {
         this.yearsExperience = yearsExperience;
+    }
+
+    public String getEmail() {
+        return this.email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String toString() {
