@@ -1,6 +1,7 @@
 <html>
     <head>
-        <link rel="stylesheet" href="main.css">
+        <title>Abstraction Exercise</title>
+        <link rel="stylesheet" href="/complete/src/main/resources/templates/main.css">
         <!--Stylesheet is not being used why unknown-->
     </head>
     <body>
@@ -16,6 +17,15 @@
                     <td><input type="text" th:field="*{age}" /></td>
                     <td th:if="${#fields.hasErrors('age')}" th:errors="*{age}">Age Error</td>
                 </tr>
+
+                <tr>
+                        <td>Years of Experience:</td>
+                        <td><input type="text" th:field="*{yearsExperience}" /></td>
+                        <td th:if="${#fields.hasErrors('yearsExperience')}" th:errors="*{yearsExperience}">yearsExperience Error</td>
+                    </tr>
+
+
+
                 <tr>
                     <td><button type="submit">Submit</button></td>
                 </tr>

@@ -14,6 +14,10 @@ public class PersonForm {
     @Min(18)
     private Integer age;
 
+    @NotNull
+    @Min(2)
+    private Integer yearsExperience;
+
     // add street address and email, years of experience, and a long
     // add more data labels & fields
     // append these to the text file
@@ -44,6 +48,14 @@ public class PersonForm {
 
     public void setAge(Integer age) {
         this.age = age;
+    }
+
+    public Integer getYearsExperience() {
+        return yearsExperience;
+    }
+
+    public void setYearsExperience(Integer yearsExperience) {
+        this.yearsExperience = yearsExperience;
     }
 
     public String toString() {
