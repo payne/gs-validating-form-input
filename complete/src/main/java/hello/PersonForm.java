@@ -22,11 +22,15 @@ public class PersonForm {
     private Integer yearsExperience;
 
     // @NotNull would not prevent successful submission when leaving email blank
-    // @NotEmpty
-    // @Email(message = "Email should be valid")
-    // private String email;
+    @NotEmpty
+    @Email(message = "Email should be valid")
+    private String email;
+
+   // @NotEmpty
+  //  @Min(-9223372036854775808)
+    //@Max(9223372036854775807)
     // This does nto work.  Min and Max are Integers, these are too large.
-  //  private Long exampleLong;
+ //   private Long exampleLong;
     // source: https://www.baeldung.com/javax-validation
 
     // add street address and email, years of experience, and a long
@@ -83,13 +87,13 @@ public class PersonForm {
         this.yearsExperience = yearsExperience;
     }
 
-    // public String getEmail() {
-    //     return this.email;
-    // }
+    public String getEmail() {
+        return this.email;
+    }
 
-    // public void setEmail(String email) {
-    //     this.email = email;
-    // }
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
     // public Long getLong() {
     //     return this.exampleLong;
@@ -102,4 +106,5 @@ public class PersonForm {
     public String toString() {
         return "Person(Name: " + this.name + ", Age: " + this.age + ")";
     }
+
 }

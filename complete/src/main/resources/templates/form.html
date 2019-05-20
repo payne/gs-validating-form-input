@@ -1,9 +1,10 @@
 <html>
 
-<!-- <head>
+<head>
     <title>Abstraction Exercise</title>
     <link rel="stylesheet" href="/complete/src/main/resources/templates/main.css">
-</head> -->
+    <!--Stylesheet is not being used why unknown-->
+</head>
 
 <body>
     <form action="#" th:action="@{/}" th:object="${personForm}" method="post">
@@ -23,11 +24,11 @@
                     <td><input type="text" th:field="*{yearsExperience}" /></td>
                     <td th:if="${#fields.hasErrors('yearsExperience')}" th:errors="*{yearsExperience}">yearsExperience Error</td>
                 </tr>
-                <!-- <tr>
+                <tr>
                     <td>Email:</td>
                     <td><input type="text" th:field="*{email}" /></td>
                     <td th:if="${#fields.hasErrors('email')}" th:errors="*{email}">email Error</td>
-                </tr>  -->
+                </tr>
                 <!-- <tr>
                     <td>Sample Long:</td>
                     <td><input type="text" th:field="*{exampleLong}" /></td>
