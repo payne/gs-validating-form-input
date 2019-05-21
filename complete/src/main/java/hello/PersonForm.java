@@ -6,6 +6,9 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
+import java.io.FileWriter;
+import java.io.PrintWriter;
+import java.io.IOException;
 
 public class PersonForm {
 
@@ -74,15 +77,19 @@ public class PersonForm {
         return "Person(Name: " + this.name + ", Age: " + this.age + ", Zip: " + this.zip + ")";
     }
 
-    // public void savePerson(String fileName, PersonForm person) {
-    //     // to append a CSV line to a file -- the data in the line should be from one instance of PersonForm
-    //     // 4) Write a method: savePerson(String fileName, PersonForm person) to append a CSV line to a file -- the data in the line should be from one instance of PersonForm
+    public void savePerson(String fileName, PersonForm person) {
+        // to append a CSV line to a file -- the data in the line should be from one instance of PersonForm
+        // 4) Write a method: savePerson(String fileName, PersonForm person) to append a CSV line to a file -- the data in the line should be from one instance of PersonForm
         
-    //         String personData = getName() + ", " +  getAge() + ", " + getYearsExperience() + ", " + getEmail() + ", " + getZip();
+            String personData = getName() + ", " +  getAge() + ", " + getYearsExperience() + ", " + getEmail() + ", " + getZip();
             
-    //         FileWriter fileWriter = new FileWriter(fileName, true);
-    //         PrintWriter printWriter = new PrintWriter(fileWriter);
-    //         printWriter.println(personData);
-    //         printWriter.close();
-    //     }
+            try {
+                FileWriter fileWriter = new FileWriter(fileName, true);
+                PrintWriter printWriter = new PrintWriter(fileWriter);
+                printWriter.println(personData);
+                printWriter.close();                
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
 }
