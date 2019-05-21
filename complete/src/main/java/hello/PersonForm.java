@@ -77,10 +77,7 @@ public class PersonForm {
         return "Person(Name: " + this.name + ", Age: " + this.age + ", Zip: " + this.zip + ")";
     }
 
-    public void savePerson(String fileName, PersonForm person) {
-        // to append a CSV line to a file -- the data in the line should be from one instance of PersonForm
-        // 4) Write a method: savePerson(String fileName, PersonForm person) to append a CSV line to a file -- the data in the line should be from one instance of PersonForm
-        
+    public void savePerson(String fileName, PersonForm person) {        
             String personData = getName() + ", " +  getAge() + ", " + getYearsExperience() + ", " + getEmail() + ", " + getZip();
             
             try {
