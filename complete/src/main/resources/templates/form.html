@@ -29,11 +29,11 @@
                     <td><input type="text" th:field="*{email}" /></td>
                     <td th:if="${#fields.hasErrors('email')}" th:errors="*{email}">email Error</td>
                 </tr>
-                <!-- <tr>
-                    <td>Sample Long:</td>
-                    <td><input type="text" th:field="*{exampleLong}" /></td>
-                    <td th:if="${#fields.hasErrors('exampleLong')}" th:errors="*{exampleLong}">Long Error</td>
-                </tr> -->
+                <tr>
+                    <td>Zip Code:</td>
+                    <td><input type="text" th:field="*{zip}" /></td>
+                    <td th:if="${#fields.hasErrors('zip')}" th:errors="*{zip}">zip Error</td>
+                </tr>
 
 
                 

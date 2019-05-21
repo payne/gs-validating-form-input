@@ -1,6 +1,7 @@
 package hello;
 
 import javax.validation.constraints.Min;
+import javax.validation.constraints.Max;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.validation.constraints.Email;
@@ -24,12 +25,10 @@ public class PersonForm {
     @Email(message = "Email should be valid")
     private String email;
 
-    // @NotEmpty
-    // @Min(-9223372036854775808)
-    // @Max(9223372036854775807)
-    // This does nto work.  Min and Max are Integers, these are too large.
-    // private Long exampleLong;
-    // source: https://www.baeldung.com/javax-validation
+    @NotNull
+    @Min(value = 00501, message = "The minimum valid 5 digit zip code is 00501") // see PLAN.md this is not working
+    @Max(value = 99950, message = "The maximum valid 5 digit zip code is 99950")
+    private Long zip;
 
     public String getName() {
         return this.name;
@@ -63,27 +62,27 @@ public class PersonForm {
         this.email = email;
     }
 
-    // public Long getLong() {
-    //     return this.exampleLong;
-    // }
-
-    // public void setLong(Long exampleLong) {
-    //     return this.exampleLong;
-    // }
-
-    public String toString() {
-        return "Person(Name: " + this.name + ", Age: " + this.age + ")";
+    public Long getZip() {
+        return this.zip;
     }
 
-    public void savePerson(String fileName, PersonForm person) {
-        // to append a CSV line to a file -- the data in the line should be from one instance of PersonForm
-        // 4) Write a method: savePerson(String fileName, PersonForm person) to append a CSV line to a file -- the data in the line should be from one instance of PersonForm
+    public void setZip(Long zip) {
+        this.zip = zip;
+    }
+
+    public String toString() {        
+        return "Person(Name: " + this.name + ", Age: " + this.age + ", Zip: " + this.zip + ")";
+    }
+
+    // public void savePerson(String fileName, PersonForm person) {
+    //     // to append a CSV line to a file -- the data in the line should be from one instance of PersonForm
+    //     // 4) Write a method: savePerson(String fileName, PersonForm person) to append a CSV line to a file -- the data in the line should be from one instance of PersonForm
         
-            String personData = getName() + ", " +  getAge() + ", " + getYearsExperience() + ", " + getEmail();
+    //         String personData = getName() + ", " +  getAge() + ", " + getYearsExperience() + ", " + getEmail() + ", " + getZip();
             
-            FileWriter fileWriter = new FileWriter(fileName, true);
-            PrintWriter printWriter = new PrintWriter(fileWriter);
-            printWriter.println(personData);
-            printWriter.close();
-        }
+    //         FileWriter fileWriter = new FileWriter(fileName, true);
+    //         PrintWriter printWriter = new PrintWriter(fileWriter);
+    //         printWriter.println(personData);
+    //         printWriter.close();
+    //     }
 }
