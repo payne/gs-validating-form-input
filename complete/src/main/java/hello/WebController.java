@@ -22,6 +22,7 @@ public class WebController implements WebMvcConfigurer {
 		if (bindingResult.hasErrors()) {
 			return "form";
 		}
+		personForm.savePerson("data.txt", personForm);  // See PLAN.md
 		return "results";
 	}
 }
