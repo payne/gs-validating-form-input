@@ -9,6 +9,7 @@ import javax.validation.constraints.NotEmpty;
 import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.io.IOException;
+import java.util.Date;
 
 public class PersonForm {
 
@@ -73,12 +74,18 @@ public class PersonForm {
         this.zip = zip;
     }
 
-    public String toString() {        
+	public static long kbNumber() {
+		Date date = new Date();
+		long timeStamp = date.getTime();
+		return timeStamp;
+	}
+
+    public String toString() {
         return "Person(Name: " + this.name + ", Age: " + this.age + ", Zip: " + this.zip + ")";
     }
 
     public void savePerson(String fileName, PersonForm person) {        
-            String personData = getName() + ", " +  getAge() + ", " + getYearsExperience() + ", " + getEmail() + ", " + getZip();
+            String personData = "KBA-" + kbNumber() + " " + getName() + ", " +  getAge() + ", " + getYearsExperience() + ", " + getEmail() + ", " + getZip();
             
             try {
                 FileWriter fileWriter = new FileWriter(fileName, true);
