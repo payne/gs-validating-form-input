@@ -33,8 +33,7 @@
                     <td>Zip Code:</td>
                     <td><input type="text" th:field="*{zip}" /></td>
                     <td th:if="${#fields.hasErrors('zip')}" th:errors="*{zip}">zip Error</td>
-                </tr>                
-                <tr>
+
                     <td><button type="submit">Submit</button></td>
                 </tr>
             </table>
